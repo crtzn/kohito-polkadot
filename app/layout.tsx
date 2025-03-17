@@ -3,6 +3,7 @@ import { Unbounded } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const unbounded = Unbounded({
   variable: "--font-unbounded", // This defines a CSS variable
@@ -27,6 +28,7 @@ export default function RootLayout({
           <Navbar />
         </div>
         {children}
+        <Toaster />
         <div>
           <Footer />
         </div>

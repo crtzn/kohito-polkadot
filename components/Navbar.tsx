@@ -14,6 +14,7 @@ function Navbar() {
         <h1>Logo here</h1>
       </div>
       <div>
+        {/* Wallet btn Connection */}
         <WalletProvider />
       </div>
     </div>
