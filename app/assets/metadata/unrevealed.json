@@ -1,0 +1,6 @@
+{
+  "name": "Mystery Polkadot NFT",
+  "description": "This is an unrevealed NFT. Stay tuned for the big reveal!",
+  "image": "ipfs://<PLACEHOLDER_CID>/mystery.png",
+  "attributes": [{ "trait_type": "Status", "value": "Unrevealed" }]
+}
