@@ -1,19 +1,20 @@
-"use client"
-import { Star, Minus, Plus } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import MysteryCard from "@/assets/images/mystery_card.png"
+"use client";
+import { Star, Minus, Plus } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import MysteryCard from "@/assets/images/mystery_card.png";
 
 export default function MintPage() {
   return (
     <div className="flex flex-col min-h-screen">
-
       {/* Main Content */}
       <main className="flex-1 bg-[#141414]/50">
         {/* Header Section */}
         <div className="bg-[#252728]/80 backdrop-blur-sm py-6 px-8 rounded-b-3xl mx-auto max-w-6xl mt-20">
           <div className="flex items-center gap-4">
             <Star className="text-[#c0ff00] h-10 w-10" fill="#c0ff00" />
-            <h1 className="text-[#c0ff00] text-4xl font-bold">Forge Your Fate: Mint a Mystery Card!</h1>
+            <h1 className="text-[#c0ff00] text-4xl font-bold">
+              Forge Your Fate: Mint a Mystery Card!
+            </h1>
           </div>
         </div>
 
@@ -25,24 +26,30 @@ export default function MintPage() {
               {/* Card Stack Effect - Simple Placeholder */}
               <div className="absolute -right-6 top-5 h-[350px] w-[250px] bg-black rounded-xl rotate-6 border-2 border-[#c0ff00]"></div>
               <div className="absolute -right-3 top-3 h-[350px] w-[250px] bg-black rounded-xl rotate-3 border-2 border-[#c0ff00]"></div>
-              
-                <img src={MysteryCard.src} alt="card" className="absolute -right-1 top-1 h-[350px] w-[250px] bg-black rounded-xl rotate-0 border-2 border-[#c0ff00]"/>
-              
+
+              <img
+                src={MysteryCard.src}
+                alt="card"
+                className="absolute -right-1 top-1 h-[350px] w-[250px] bg-black rounded-xl rotate-0 border-2 border-[#c0ff00]"
+              />
             </div>
           </div>
 
           {/* Right Side - Mystery Card Info */}
           <div className="md:w-3/5">
             <div className="bg-[#252728]/80 backdrop-blur-sm rounded-3xl p-6 text-white">
-              <h2 className="text-[#c0ff00] text-3xl font-bold mb-6">Mystery Card</h2>
+              <h2 className="text-[#c0ff00] text-3xl font-bold mb-6">
+                Mystery Card
+              </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Description */}
                 <div className="bg-[#2d2f30]/80 rounded-xl p-4">
                   <h3 className="text-gray-400 mb-2">Description:</h3>
                   <p className="text-sm">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
                   </p>
                 </div>
 
@@ -78,14 +85,18 @@ export default function MintPage() {
                     <div className="flex justify-between items-center">
                       <div>
                         <span className="text-xl font-bold">0.00 KHTC</span>
-                        <span className="text-gray-400 text-sm ml-2">($0.00)</span>
+                        <span className="text-gray-400 text-sm ml-2">
+                          ($0.00)
+                        </span>
                       </div>
 
                       <div className="flex items-center border border-gray-600 rounded-md">
                         <button className="px-3 py-1 text-gray-300 hover:bg-[#2d2f30]">
                           <Minus className="h-4 w-4" />
                         </button>
-                        <div className="px-4 py-1 border-x border-gray-600">1</div>
+                        <div className="px-4 py-1 border-x border-gray-600">
+                          1
+                        </div>
                         <button className="px-3 py-1 text-gray-300 hover:bg-[#2d2f30]">
                           <Plus className="h-4 w-4" />
                         </button>
@@ -131,6 +142,5 @@ export default function MintPage() {
         </div>
       </main>
     </div>
-  )
+  );
 }
-
