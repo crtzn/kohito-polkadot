@@ -17,7 +17,15 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown, Wallet, Copy, Package, History, Settings, LogOut } from "lucide-react";
+import {
+  ChevronDown,
+  Wallet,
+  Copy,
+  Package,
+  History,
+  Settings,
+  LogOut,
+} from "lucide-react";
 
 //polkadot import
 import {
@@ -42,10 +50,10 @@ function WalletProvider() {
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
   };
 
-    const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text)
-    toast.success("Address copied to clipboard")
-  }
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    toast.success("Address copied to clipboard");
+  };
 
   // Fetch all accounts when the dialog opens
   const fetchAccounts = async () => {
@@ -116,8 +124,8 @@ function WalletProvider() {
             <Button
               className={getButtonStyles("primary")}
               onClick={() => {
-                fetchAccounts()
-                setIsDialogOpen(true)
+                fetchAccounts();
+                setIsDialogOpen(true);
               }}
             >
               <Wallet className="w-5 h-5" />
@@ -153,81 +161,92 @@ function WalletProvider() {
       {/* Show selected account details when connected */}
       {isWalletConnected && selectedAccount && (
         <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <button className="flex items-center bg-[#252728] rounded-full px-2 py-1 focus:outline-none">
-            <div className="bg-[#e4ff07] rounded-full w-8 h-8 flex items-center justify-center mr-2">
-              <span className="text-[#000000] text-xs">👤</span>
-            </div>
-            <span className="text-white text-sm mr-1">
-              {selectedAccount.meta.name || `Anon #${shortenAddress(selectedAccount.address)}`}
-            </span>
-            <ChevronDown className="w-4 h-4 text-white" />
-          </button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-64 mr-4 bg-[#1e1e1e] border-[#252728] text-white p-0 rounded-xl">
-          {/* User Profile Header */}
-          <div className="p-4 flex items-center gap-3">
-            <div className="bg-[#e4ff07] rounded-full w-10 h-10 flex items-center justify-center border-2 border-[#e4ff07]">
-              <span className="text-[#000000] text-sm">👤</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-medium">
-                {selectedAccount.meta.name || `Anon #${shortenAddress(selectedAccount.address)}`}
-              </span>
-              <span className="text-xs bg-[#0dff00] text-[#000000] px-2 rounded-full w-fit">Verified</span>
-            </div>
-          </div>
-
-          {/* Connected Address */}
-          <div className="mx-4 mb-4">
-            <div className="bg-[#252728] rounded-xl p-3 flex items-center justify-between">
-              <div className="flex flex-col">
-                <span className="text-xs text-[#696b6d]">Connected Address</span>
-                <span className="text-sm">{shortenAddress(selectedAccount.address)}</span>
+          <DropdownMenuTrigger asChild>
+            <button className="flex items-center bg-[#252728] rounded-full px-2 py-1 focus:outline-none">
+              <div className="bg-[#e4ff07] rounded-full w-8 h-8 flex items-center justify-center mr-2">
+                <span className="text-[#000000] text-xs">👤</span>
               </div>
-              <button
-                className="text-[#696b6d] hover:text-white transition-colors"
-                onClick={() => copyToClipboard(selectedAccount.address)}
-              >
-                <Copy size={16} />
-              </button>
+              <span className="text-white text-sm mr-1">
+                {selectedAccount.meta.name ||
+                  `Anon #${shortenAddress(selectedAccount.address)}`}
+              </span>
+              <ChevronDown className="w-4 h-4 text-white" />
+            </button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-64 mr-4 bg-[#1e1e1e] border-[#252728] text-white p-0 rounded-xl">
+            {/* User Profile Header */}
+            <div className="p-4 flex items-center gap-3">
+              <div className="bg-[#e4ff07] rounded-full w-10 h-10 flex items-center justify-center border-2 border-[#e4ff07]">
+                <span className="text-[#000000] text-sm">👤</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-medium">
+                  {selectedAccount.meta.name ||
+                    `Anon #${shortenAddress(selectedAccount.address)}`}
+                </span>
+                <span className="text-xs bg-[#0dff00] text-[#000000] px-2 rounded-full w-fit">
+                  Verified
+                </span>
+              </div>
             </div>
-          </div>
 
-          {/* Menu Items */}
-          <DropdownMenuItem className="px-4 py-3 focus:bg-[#252728] cursor-pointer">
-            <div className="text-[#e4ff07] mr-3">
-              <Package size={18} />
+            {/* Connected Address */}
+            <div className="mx-4 mb-4">
+              <div className="bg-[#252728] rounded-xl p-3 flex items-center justify-between">
+                <div className="flex flex-col">
+                  <span className="text-xs text-[#696b6d]">
+                    Connected Address
+                  </span>
+                  <span className="text-sm">
+                    {shortenAddress(selectedAccount.address)}
+                  </span>
+                </div>
+                <button
+                  className="text-[#696b6d] hover:text-white transition-colors"
+                  onClick={() => copyToClipboard(selectedAccount.address)}
+                >
+                  <Copy size={16} />
+                </button>
+              </div>
             </div>
-            <span>Inventory</span>
-          </DropdownMenuItem>
 
-          <DropdownMenuItem className="px-4 py-3 focus:bg-[#252728] cursor-pointer">
-            <div className="text-white mr-3">
-              <History size={18} />
-            </div>
-            <span>Transaction History</span>
-          </DropdownMenuItem>
+            {/* Menu Items */}
+            <DropdownMenuItem className="px-4 py-3 focus:bg-[#252728] cursor-pointer">
+              <div className="text-[#e4ff07] mr-3">
+                <Package size={18} />
+              </div>
+              <span className="hover:text-white">Inventory</span>
+            </DropdownMenuItem>
 
-          <DropdownMenuItem className="px-4 py-3 focus:bg-[#252728] cursor-pointer">
-            <div className="text-white mr-3">
-              <Settings size={18} />
-            </div>
-            <span>Settings</span>
-          </DropdownMenuItem>
+            <DropdownMenuItem className="px-4 py-3 focus:bg-[#252728] cursor-pointer">
+              <div className="text-white mr-3">
+                <History size={18} />
+              </div>
+              <span className="hover:text-white">Transaction History</span>
+            </DropdownMenuItem>
 
-          <DropdownMenuSeparator className="bg-[#252728]" />
+            <DropdownMenuItem className="px-4 py-3 focus:bg-[#252728] cursor-pointer">
+              <div className="text-white mr-3">
+                <Settings size={18} />
+              </div>
+              <span className="hover:text-white">Settings</span>
+            </DropdownMenuItem>
 
-          <DropdownMenuItem className="px-4 py-3 focus:bg-[#252728] cursor-pointer" onClick={handleWalletDisconnect}>
-            <div className="text-[#ff2670] mr-3">
-              <LogOut size={18} />
-            </div>
-            <span className="text-[#ff2670]">Sign out</span>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    )}
-  </div>
+            <DropdownMenuSeparator className="bg-[#252728]" />
+
+            <DropdownMenuItem
+              className="px-4 py-3 focus:bg-[#252728] cursor-pointer"
+              onClick={handleWalletDisconnect}
+            >
+              <div className="text-[#ff2670] mr-3">
+                <LogOut size={18} />
+              </div>
+              <span className="text-[#ff2670]">Sign out</span>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      )}
+    </div>
   );
 }
 
