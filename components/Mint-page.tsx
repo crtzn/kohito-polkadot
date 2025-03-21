@@ -1,22 +1,16 @@
 "use client"
 import { Star, Minus, Plus } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import MysteryCard from "@/assets/images/mystery_card.png"
 
 export default function MintPage() {
   return (
     <div className="flex flex-col min-h-screen">
 
       {/* Main Content */}
-      <main
-        className="flex-1 bg-gradient-to-b from-[#706090] to-[#545674]"
-        style={{
-          backgroundImage: `url('/mystery_card.png?height=800&width=1400')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <main className="flex-1 bg-[#141414]/50">
         {/* Header Section */}
-        <div className="bg-[#252728]/80 backdrop-blur-sm py-6 px-8 rounded-b-3xl mx-auto max-w-6xl">
+        <div className="bg-[#252728]/80 backdrop-blur-sm py-6 px-8 rounded-b-3xl mx-auto max-w-6xl mt-20">
           <div className="flex items-center gap-4">
             <Star className="text-[#c0ff00] h-10 w-10" fill="#c0ff00" />
             <h1 className="text-[#c0ff00] text-4xl font-bold">Forge Your Fate: Mint a Mystery Card!</h1>
@@ -27,27 +21,13 @@ export default function MintPage() {
         <div className="container mx-auto px-5 py-16 flex flex-col md:flex-row gap-10 items-center justify-between">
           {/* Left Side - NFT Card Placeholder */}
           <div className="md:w-1/3">
-            <div className="relative">
+            <div className="relative top-[-200px] left-[-100px]">
               {/* Card Stack Effect - Simple Placeholder */}
               <div className="absolute -right-6 top-5 h-[350px] w-[250px] bg-black rounded-xl rotate-6 border-2 border-[#c0ff00]"></div>
               <div className="absolute -right-3 top-3 h-[350px] w-[250px] bg-black rounded-xl rotate-3 border-2 border-[#c0ff00]"></div>
-
-              {/* Main Card Placeholder */}
-              <div className="relative h-[350px] w-[250px] bg-black rounded-xl border-2 border-[#c0ff00] overflow-hidden flex flex-col">
-                {/* Card Image Area */}
-                <div className="h-[220px] bg-[#090928] flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-[#4a90ff] text-8xl font-bold mb-2">?</div>
-                    <div className="text-white text-xl font-bold">ORASYON</div>
-                  </div>
-                </div>
-
-                {/* Card Info Area */}
-                <div className="p-3 text-white bg-black flex-1 flex flex-col justify-between">
-                  <div className="text-center text-[#c0ff00] text-sm">NFT Card Placeholder</div>
-                  <div className="text-center text-xs text-gray-400">Replace with actual card image</div>
-                </div>
-              </div>
+              
+                <img src={MysteryCard.src} alt="card" className="absolute -right-1 top-1 h-[350px] w-[250px] bg-black rounded-xl rotate-0 border-2 border-[#c0ff00]"/>
+              
             </div>
           </div>
 
