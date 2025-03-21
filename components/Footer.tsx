@@ -59,7 +59,7 @@ export default function Footer() {
             <h2 className="text-gray-400 font-bold text-xl mb-4">User Support</h2>
             <ul className="space-y-3">
               <li>
-                <Link href="#" className="text-[#c0ff00] hover:text-[#d8ff4a]">
+                <Link href="#" className="text-white hover:text-[#c0ff00]">
                   Terms & Condition
                 </Link>
               </li>
