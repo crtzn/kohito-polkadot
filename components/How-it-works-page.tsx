@@ -6,16 +6,9 @@ export default function HowItWorksPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Main Content */}
-      <main
-        className="flex-1 bg-gradient-to-b from-[#706090] to-[#545674]"
-        style={{
-          backgroundImage: `url('/placeholder.svg?height=800&width=1400')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <main className="flex-1 bg-[#141414]/50">
         {/* Header Section */}
-        <div className="bg-[#252728]/80 backdrop-blur-sm py-6 px-8 rounded-b-3xl mx-auto max-w-6xl">
+        <div className="bg-[#252728]/80 backdrop-blur-sm py-6 px-8 rounded-b-3xl mx-auto max-w-6xl mt-20">
           <div className="flex items-center gap-4">
             <Star className="text-[#c0ff00] h-10 w-10" fill="#c0ff00" />
             <h1 className="text-[#c0ff00] text-4xl font-bold">HOW IT WORKS</h1>
