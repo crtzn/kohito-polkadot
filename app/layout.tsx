@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Unbounded } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import { Toaster } from "@/components/ui/sonner";
 
 const unbounded = Unbounded({
@@ -24,14 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${unbounded.variable}  antialiased`}>
-        <div>
-          <Navbar />
-        </div>
+        <div></div>
         {children}
         <Toaster />
-        <div>
-          <Footer />
-        </div>
+        <div></div>
       </body>
     </html>
   );

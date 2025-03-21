@@ -1,7 +1,7 @@
 "use client";
 import { Star, Minus, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import MysteryCard from "@/assets/images/mystery_card.png";
+import MysteryCard from "@/app/assets/images/mystery_card.png";
 
 export default function MintPage() {
   return (
